@@ -1,0 +1,735 @@
+/*
+   styles.css
+
+   This stylesheet unifies and beautifies the design across your Home, Synths,
+   Effects, and Review pages. It focuses on elegance, consistent centering
+   for rectangular elements and text, and refined typography.
+*/
+
+/* --- General Body and Typography --- */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    /* Soft, elegant gradient background for main pages */
+    background-image: linear-gradient(to bottom, #d6eaf8, #c1dff0, #a8cee6); /* Light blue tones */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures body takes full viewport height for footer */
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lobster', cursive; /* Decorative font for all headings */
+    color: #4A235A; /* Deep, elegant purple for headings */
+    margin-bottom: 1.5rem;
+    text-align: center; /* All headings centered */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1); /* Subtle text shadow for depth */
+}
+
+/* --- Header Styling --- */
+header {
+    background-color: #ffffff; /* White background for the entire header section */
+    padding-bottom: 3rem; /* More space below images */
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Soft, prominent shadow */
+}
+
+header h1 {
+    /* Main title styling */
+    background-color: #8E2B8E; /* Rich purple background */
+    color: white;
+    font-size: 4rem; /* Larger, more impactful title */
+    margin-bottom: 2.5rem; /* More space below h1 */
+    padding: 1.8rem 0; /* More padding inside the h1 */
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Stronger text shadow for h1 */
+}
+
+/* Image Gallery within Header */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* More space between images */
+    flex-wrap: wrap;
+    margin-top: 2rem; /* Space between h1 and images */
+    padding: 0 1.5rem; /* Padding to prevent images from touching edges */
+}
+
+/* Specific image styling for images inside .image-gallery */
+.image-gallery img {
+    max-height: 180px; /* Larger images */
+    width: auto;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Stronger, deeper shadow for images */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother animation */
+    object-fit: cover;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.08); /* More pronounced enlarge on hover */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35); /* Even stronger shadow on hover */
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    background: linear-gradient(to right, #A73C9C, #7D298F) !important; /* Deeper, richer gradient for navbar */
+    padding: 1rem 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-family: 'Lobster', cursive;
+    font-size: 2rem; /* Larger brand text */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    padding: 0.8rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link i {
+    margin-right: 0.8rem;
+}
+
+/* --- Main Content Area (Unified Card Style) --- */
+.main-content-area {
+    flex-grow: 1; /* Allows content area to expand and push footer down */
+    padding: 3rem; /* More internal padding */
+    max-width: 900px; /* Consistent content width */
+    margin: 3rem auto; /* Centered with vertical margin */
+    background-color: #ffffff;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Softer, deeper shadow */
+}
+
+/* --- Section Styling (e.g., product list, cart, review sections) --- */
+.section-card { /* General card style for sections like the video review, or review list */
+    margin-bottom: 4rem; /* More space between sections */
+    padding: 2.5rem; /* Increased internal padding */
+    border: 1px solid #e0eaf5; /* Lighter, subtle border */
+    border-radius: 15px; /* More rounded corners */
+    background-color: #f7faff; /* Very light, cool background */
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.02); /* Subtle inner shadow */
+
+    /* NEW: Flexbox for robust centering of children */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;   /* Center children horizontally along the cross-axis */
+    /* text-align: center; removed as flexbox handles centering block/inline-block items */
+}
+
+/* Adjust heading within section cards */
+.section-card h2, .section-card h3 {
+    font-size: 2.5rem; /* Larger section headings */
+    color: #4A235A; /* Consistent heading color */
+    border-bottom: 3px solid #cce1f2; /* Thicker, lighter border */
+    padding-bottom: 1.2rem;
+    margin-bottom: 2.5rem; /* More space below heading */
+    text-align: left; /* Keep section headings left-aligned as per user's original pages */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.03);
+}
+
+/* --- Specific Element Styles for Content --- */
+
+/* Paragraphs (e.g., on Home, Synths, Effects, Reviews) */
+p.paragraphs { /* Targeted for paragraphs with class "paragraphs" */
+    border: 2px solid #a8cee6; /* More defined, elegant border */
+    margin: 25px auto; /* Centered with increased margin */
+    padding: 25px; /* More padding */
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 12px; /* More rounded */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Lighter, deeper shadow */
+    text-align: center; /* **ALL PARAGRAPH TEXT CENTERED** */
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Images on Synths/Effects pages (using new class `content-image`) */
+.content-image {
+    max-width: 90%; /* Ensure responsiveness */
+    height: auto;
+    border-radius: 15px; /* Consistent rounding */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Deeper shadow */
+    margin: 2.5rem auto; /* Centered with vertical margin */
+    display: block; /* Ensures margin auto works for centering */
+}
+
+/* Video Container for responsive iframes */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 2.5rem; /* More space below video */
+    border-radius: 15px; /* Consistent rounding */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Stronger shadow for video */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove iframe border */
+}
+
+/* Lists - General (ensure they are not overriding .centered-list below) */
+ul, ol {
+    padding-left: 20px; /* Default padding for bullets */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Centered Lists with Bullet Points */
+.centered-list {
+    list-style-position: inside; /* Keeps the bullet point with the text when centered */
+    text-align: center; /* **BULLET POINT TEXT CENTERED** */
+    width: fit-content; /* Makes the ul only as wide as its content */
+    margin-left: auto; /* Centers the list horizontally */
+    margin-right: auto;
+    padding-left: 0; /* Remove default padding for lists that need to be truly centered */
+    list-style-type: disc; /* Ensure default disc bullet style */
+    color: #555; /* Default text color for list items */
+    font-size: 1.1rem; /* Slightly larger list font */
+    line-height: 1.6;
+}
+
+.centered-list li {
+    padding: 5px 0; /* Some vertical padding for list items */
+}
+
+
+/* Review List (on Review.html) */
+.review-list {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    margin: 0;
+}
+
+.review-item {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.review-item h4 {
+    font-size: 1.4rem;
+    color: #4A235A;
+    margin-bottom: 1rem;
+    text-align: left; /* Align reviewer name to left */
+}
+
+.review-item p.paragraphs { /* Adjust paragraph styling specifically within review items */
+    margin: 1rem 0; /* Adjust margin */
+    padding: 0; /* Remove extra padding inherited from global .paragraphs */
+    border: none; /* No border here */
+    box-shadow: none; /* No shadow here */
+    width: auto; /* Let content determine width */
+    max-width: none; /* Remove max-width constraint */
+    text-align: left; /* Keep review text left-aligned */
+    background-color: transparent; /* Transparent background */
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Button Group on Review Page */
+.button-group { /* Renamed from .buttonsinreviewpage */
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Space between buttons */
+}
+
+.button-group .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px; /* Pill-shaped buttons */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: none; /* Remove default bootstrap border */
+}
+
+.button-group .btn-primary {
+    background-color: #7D298F; /* Primary theme color */
+    border-color: #7D298F;
+    color: white;
+}
+
+.button-group .btn-primary:hover {
+    background-color: #A73C9C; /* Lighter theme color on hover */
+    border-color: #A73C9C;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.button-group .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.button-group .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.button-group input[type="submit"] {
+    background-image: linear-gradient(to right, #7D298F, #A73C9C);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.button-group input[type="submit"]:hover {
+    background-image: linear-gradient(to right, #A73C9C, #7D298F);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Radio button and label styling for forms */
+fieldset {
+    border: 2px solid #cce1f2;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: #f7faff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+legend {
+    font-family: 'Lobster', cursive;
+    font-size: 1.8rem;
+    color: #4A235A;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+fieldset div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+fieldset label {
+    margin-left: 0.5rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+fieldset input[type="radio"] {
+    margin-top: 0.2rem; /* Align radio button with text */
+}
+
+/* Links within review page (e.g., "First Review") */
+.review-links-list { /* New class for the ordered list of review links */
+    list-style: none; /* Remove default numbers */
+    padding: 0;
+    margin: 2rem auto;
+    max-width: 500px;
+    text-align: center; /* Center the list itself */
+}
+
+.review-links-list li {
+    margin-bottom: 1rem;
+}
+
+.review-links-list li a {
+    color: #7D298F; /* Theme color for links */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    background-color: #f0f7fc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.review-links-list li a:hover {
+    color: #A73C9C;
+    background-color: #e0f0f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* --- Footer Styling --- */
+footer {
+    background-image: linear-gradient(to right, #7D298F, #A73C9C); /* Deeper gradient for footer */
+    color: #f0f0f0;
+    text-emphasis-color: white;
+    padding: 3rem 0; /* More padding */
+    font-size: 1rem;
+    border-top: 1px solid #600060;
+    margin-top: auto;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1); /* Shadow for footer */
+}
+
+.site-footer h5 {
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center; /* Center footer links/social headings */
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.site-footer ul {
+    padding: 0;
+    list-style: none;
+    text-align: center; /* Center footer links */
+}
+
+.site-footer ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.3rem 0;
+    display: inline-block;
+}
+
+.site-footer ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.site-footer .col-6.col-sm-5 { /* Social icons column */
+    display: flex;
+    flex-direction: column; /* Stack icons vertically on small screens if needed */
+    justify-content: center;
+    align-items: center; /* Center icons horizontally */
+}
+
+.site-footer .col-6.col-sm-5 a {
+    color: #f0f0f0;
+    margin: 0.5rem 1rem; /* Adjust margin for social icons */
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 2rem; /* Larger social icons */
+}
+
+.site-footer .col-6.col-sm-5 a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    text-shadow: 0 0 8px rgba(255,255,255,0.7);
+}
+
+.site-footer .col-sm-4 { /* Contact info column */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center contact info */
+    text-align: center;
+}
+
+.site-footer .col-sm-4 a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-top: 0.8rem;
+    display: inline-block;
+}
+
+.site-footer .col-sm-4 a:hover {
+    color: #ffffff;
+}
+
+.site-footer .col-sm-4 i {
+    margin-right: 0.6rem;
+    font-size: 1.1rem;
+    color: #ffffff; /* Explicitly set icon color for footer */
+}
+
+/* Universal Icon Color (applied globally where not overridden) */
+i {
+    color: #8E2B8E; /* Theme color for general icons */
+}
+
+/* --- Responsive Adjustments (Unified) --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+        padding: 1.2rem 0;
+    }
+
+    .image-gallery img {
+        max-height: 140px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.7rem 1.2rem;
+        margin: 0 5px;
+    }
+
+    .main-content-area {
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 0; /* Remove rounded corners on small screens for full width */
+        box-shadow: none; /* Remove shadow on small screens */
+    }
+
+    .section-card {
+        padding: 1.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .section-card h2, .section-card h3 {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    p.paragraphs {
+        padding: 20px;
+        margin: 20px auto;
+        width: auto; /* Allow auto width on small screens */
+        max-width: 95%;
+        border-radius: 10px;
+    }
+
+    .content-image {
+        max-width: 95%;
+        margin: 2rem auto;
+    }
+
+    .video-container {
+        margin-bottom: 2rem;
+    }
+
+    .review-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .review-item h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .review-item p.paragraphs {
+        font-size: 0.9rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .button-group .btn, .button-group input[type="submit"] {
+        width: 100%;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    fieldset {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    legend {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    fieldset div {
+        gap: 1rem;
+        justify-content: flex-start; /* Align radio buttons to start on small screens */
+    }
+
+    .review-links-list {
+        margin: 1.5rem auto;
+        max-width: 90%;
+    }
+
+    .review-links-list li a {
+        font-size: 1.1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    footer {
+        padding: 2rem 0;
+        font-size: 0.85rem;
+    }
+
+    .site-footer h5 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .site-footer .col-6.col-sm-5 {
+        order: -1; /* Move social above contact on small screens */
+        margin-bottom: 1.5rem;
+        flex-direction: row; /* Keep social icons in a row on mobile */
+        flex-wrap: wrap;
+    }
+    .site-footer .col-sm-4 {
+        margin-top: 1.5rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2.5rem;
+        padding: 1rem 0;
+    }
+    .image-gallery img {
+        max-height: 100px;
+        margin-bottom: 0.8rem;
+    }
+    .navbar-nav .nav-link { text-align: center; }
+    .main-content-area {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    .section-card {
+        padding: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    .section-card h2, .section-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+    p.paragraphs {
+        padding: 15px;
+        margin: 15px auto;
+        font-size: 0.9rem;
+    }
+    .content-image {
+        margin: 1.5rem auto;
+    }
+    .review-item {
+        padding: 1rem;
+    }
+    .review-item h4 {
+        font-size: 1.1rem;
+    }
+    .button-group .btn, .button-group input[type="submit"] {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    fieldset {
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    legend {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+    fieldset div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    .centered-list {
+        font-size: 1rem;
+        margin: 1rem auto;
+    }
+    .review-links-list li a {
+        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
+    }
+    footer {
+        padding: 1.5rem 0;
+    }
+    .site-footer h5 {
+        font-size: 1.1rem;
+    }
+    .site-footer .col-6.col-sm-5 a {
+        font-size: 1.6rem;
+        margin: 0.4rem 0.6rem;
+    }
+    .site-footer .col-sm-4 {
+        margin-top: 1rem;
+    }
+    .site-footer .col-sm-4 a {
+        font-size: 0.8rem;
+    }
+    .site-footer .col-sm-4 i {
+        font-size: 0.9rem;
+    }
+}
+
+.btn-social-icon i {
+    color: #fff !important;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.btn-social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    margin: 0 0.25rem;
+    transition: background 0.2s;
+    border: none;
+    text-decoration: none;
+}
+.btn-social-icon i {
+    color: #fff !important;
+    font-size: 1.5rem;
+}
+.btn-social-icon:hover {
+    background: #A73C9C;
+}
+
+.site-footer h5 {
+    color: #ffffff;
+    /* ...other styles... */
+}

@@ -1,0 +1,599 @@
+/*
+   cart-beautify.css
+
+   This file contains styles ONLY for the Cart.html page.
+   It is designed to be self-contained and not affect other pages.
+   Link this file EXCLUSIVELY in Cart.html, and ensure styles.css is NOT linked there.
+*/
+
+/* --- General Body and Typography Overrides for Cart Page --- */
+body {
+    /* Bright, inviting gradient for ONLY the cart page */
+    background-image: linear-gradient(to bottom, #FFC1E3, #E0BBE4, #957DAD) !important; /* Soft pink to light purple */
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lobster', cursive; /* Specific font for Cart headings */
+    color: #8E2B8E; /* Rich purple for headings */
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.1); /* More defined text shadow */
+}
+
+/* --- Header Styling Overrides for Cart Page --- */
+header {
+    background-color: #ffffff !important; /* Ensures white header background */
+    padding-bottom: 2.5rem; /* More space below images */
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* More prominent header shadow */
+}
+
+header h1 {
+    background-color: #C62A85 !important; /* Ensures original pink background for h1 */
+    color: white !important; /* Ensures white text color for h1 */
+    font-size: 4rem; /* Larger, more impactful title */
+    margin-bottom: 2rem; /* More space below h1 */
+    padding: 1.5rem 0; /* More padding inside the h1 */
+    letter-spacing: 3px; /* Increased letter spacing for emphasis */
+    text-align: center;
+    width: 100%;
+    display: block;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3); /* Stronger, deeper text shadow for h1 */
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem; /* Increased space between images */
+    flex-wrap: wrap;
+    margin-top: 2.5rem; /* More space between h1 and images */
+    padding: 0 2rem; /* More padding */
+}
+
+.image-gallery img {
+    max-height: 200px; /* Even larger images */
+    width: auto;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35); /* Stronger, deeper shadow for images */
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother, more dramatic animation */
+    object-fit: cover;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.12); /* More pronounced enlarge on hover */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.45); /* Even stronger shadow on hover */
+}
+
+/* --- Navbar Styling Overrides for Cart Page --- */
+.navbar {
+    background: linear-gradient(to right, #A73C9C, #7D298F) !important; /* Deeper, richer gradient for navbar */
+    padding: 1.2rem 2rem; /* More padding for a bolder bar */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* More visible shadow */
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-family: 'Lobster', cursive;
+    font-size: 2.2rem; /* Larger brand text */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    padding: 1rem 1.8rem; /* Increased padding for links */
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+    border-radius: 10px; /* More rounded link backgrounds */
+    margin: 0 12px; /* More space between links */
+    font-weight: 700; /* Bolder nav links */
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.4) !important; /* More opaque white for hover */
+    color: #ffffff !important;
+    transform: translateY(-4px); /* More pronounced lift on hover */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-nav .nav-link i {
+    margin-right: 1rem; /* More space for icon */
+}
+
+/* --- Main Content Area for Cart Page (Unified Card Style) --- */
+.main-content-area {
+    flex-grow: 1;
+    padding: 4rem; /* Significantly more internal padding */
+    max-width: 1000px; /* Wider content area */
+    margin: 4rem auto; /* More margin around the content, keeps it centered */
+    background-color: #ffffff;
+    border-radius: 25px; /* Even more rounded corners for the main card */
+    box-shadow: 0 15px 45px rgba(0,0,0,0.25); /* Deeper, softer shadow for the main card */
+}
+
+/* --- Cart Specific Sections (Product List and Cart Items) --- */
+.products-section,
+.cart-section {
+    margin-bottom: 5rem; /* More space between sections */
+    padding: 3rem; /* Increased internal padding */
+    border: 1px solid #e0c8e8; /* Softer, slightly darker border */
+    border-radius: 20px; /* More rounded corners */
+    background-color: #faf7ff; /* Very light, almost white purple background */
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.05); /* Subtle inner shadow */
+}
+
+.products-section h2,
+.cart-section h2 {
+    font-size: 2.8rem; /* Larger section headings */
+    color: #6a057d;
+    border-bottom: 4px solid #ccb2d6; /* Thicker, more prominent border */
+    padding-bottom: 1.5rem;
+    margin-bottom: 3rem; /* More space below heading */
+    text-align: left;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Product Item Styling */
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 1.5rem; /* More padding */
+    margin-bottom: 1.5rem;
+    background-color: #fff; /* White background for items */
+    border: 1px solid #f2f2f2; /* Very light border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* More pronounced shadow */
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.product-item:hover {
+    transform: translateY(-10px); /* More pronounced lift on hover */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.product-item span {
+    font-weight: 800; /* Extra bold font */
+    color: #333; /* Darker text for readability */
+    font-size: 1.5rem; /* Larger text */
+}
+
+/* Buttons in Products Section */
+.product-item button.add-to-cart-btn {
+    background-image: linear-gradient(to right, #8E2B8E, #C62A85); /* Gradient for buttons */
+    padding: 15px 28px; /* Larger padding */
+    font-size: 1.2rem;
+    border-radius: 35px; /* More pill-shaped */
+    border: none;
+    color: white;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25); /* Button shadow */
+    transition: background-image 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.product-item button.add-to-cart-btn:hover {
+    background-image: linear-gradient(to right, #C62A85, #8E2B8E); /* Reverse gradient on hover */
+    transform: translateY(-4px); /* Slight lift */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Cart Items List */
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.8rem; /* More padding */
+    border-bottom: 1px dashed #e0e0e0; /* Lighter dashed line */
+    color: #444;
+    font-size: 1.3rem; /* Larger font */
+    background-color: #ffffff;
+    border-radius: 10px; /* More rounded */
+    margin-bottom: 1rem; /* More space between list items */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Subtle shadow for list items */
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#cart-items li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+#cart-items li:hover {
+    background-color: #fefefe;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+#cart-items li.placeholder-text {
+    font-style: italic;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 3.5rem; /* More padding for placeholder */
+    background-color: #fcfcfc;
+    border-radius: 12px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.08); /* Inner shadow for placeholder */
+    font-size: 1.4rem;
+}
+
+.cart-item-name {
+    font-weight: 700; /* Bolder */
+    flex-grow: 1;
+    color: #333;
+}
+
+.cart-item-price {
+    margin-left: 2.5rem; /* More space */
+    white-space: nowrap;
+    font-weight: 700;
+    color: #6a057d; /* Price in theme color */
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05);
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #DC3545; /* Bootstrap danger color */
+    font-size: 1.8rem; /* Larger icon */
+    cursor: pointer;
+    margin-left: 2rem;
+    opacity: 0.8;
+    transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.remove-item-btn:hover {
+    color: #A71D2A; /* Darker red on hover */
+    transform: scale(1.4); /* More prominent scale */
+    opacity: 1;
+}
+
+/* Cart Total */
+.cart-total {
+    text-align: right;
+    margin-top: 3.5rem; /* More margin */
+    font-size: 2rem; /* Larger total font */
+    color: #28a745; /* Bootstrap success color */
+    padding-top: 2rem;
+    border-top: 5px solid #c7e6d0; /* Thicker, lighter border for total */
+    font-weight: bold;
+    text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.08);
+}
+
+#cart-total-amount {
+    font-weight: bold;
+    color: #008000; /* Darker green for the amount */
+}
+
+#checkout-button {
+    width: 100%;
+    padding: 1.5rem; /* More padding */
+    font-size: 1.6rem; /* Larger font */
+    margin-top: 3.5rem; /* More margin */
+    border-radius: 40px; /* Even more pill-shaped button */
+    background-image: linear-gradient(to right, #28a745, #218838); /* Green gradient */
+    border: none;
+    color: white;
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5); /* Deeper shadow for checkout button */
+    transition: background-image 0.5s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+#checkout-button:hover {
+    background-image: linear-gradient(to right, #218838, #1e7e34); /* Darker green gradient on hover */
+    transform: translateY(-5px); /* More pronounced lift on hover */
+    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.6);
+}
+
+/* --- Footer Styling Overrides for Cart Page --- */
+footer {
+    background-image: linear-gradient(to right, #7D298F, #A73C9C) !important; /* Deeper gradient for footer */
+    color: #f0f0f0;
+    padding: 3.5rem 0; /* More padding */
+    font-size: 1.1rem; /* Slightly larger font */
+    border-top: 1px solid #600060;
+    margin-top: auto;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.15); /* Stronger shadow for footer */
+}
+
+.site-footer h5 {
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    margin-bottom: 1.8rem; /* More space */
+    font-size: 1.6rem; /* Larger font */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.site-footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.site-footer ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.4rem 0; /* More padding */
+    display: inline-block;
+}
+
+.site-footer ul li a:hover {
+    color: #ffe0f5;
+}
+
+.site-footer .col-sm-5 a {
+    color: #f0f0f0;
+    margin: 0 1.2rem; /* More space between social icons */
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 2.2rem; /* Even larger social icons */
+}
+
+.site-footer .col-sm-5 a:hover {
+    color: #ffe0f0;
+    transform: scale(1.2); /* More pronounced scale */
+}
+
+.site-footer .col-sm-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.site-footer .col-sm-4 a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-top: 1rem; /* More space */
+    display: inline-block;
+}
+
+.site-footer .col-sm-4 a:hover {
+    color: #ffe0f5;
+}
+
+.site-footer .col-sm-4 i {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Universal Icon Color (applied to all icons on this page) */
+i {
+    color: #ffffff; /* Ensures icons are white on dark backgrounds */
+}
+
+/* Styles for the custom message box (used by Cart.js) */
+#message-box-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050; /* Above Bootstrap modals if any */
+    pointer-events: none; /* Allows clicks through when hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#message-box-container.show {
+    opacity: 1;
+    pointer-events: all; /* Allows interaction when shown */
+}
+
+.message-box {
+    background-color: #343a40; /* Dark background */
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.message-box-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.message-box-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.message-box-close:hover {
+    opacity: 1;
+}
+
+/* --- Responsive Adjustments for Cart Page --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3.2rem;
+        padding: 1.2rem 0;
+    }
+
+    .image-gallery img {
+        max-height: 160px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .main-content-area {
+        margin: 2rem auto;
+        padding: 2.5rem;
+        border-radius: 0; /* Remove rounded corners on small screens for full width */
+        box-shadow: none; /* Remove shadow on small screens */
+    }
+
+    .products-section h2, .cart-section h2 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .product-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        margin-bottom: 1.2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .product-item span {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+    }
+
+    .product-item button.add-to-cart-btn {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    #cart-items li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem;
+        margin-bottom: 0.8rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    .cart-item-name {
+        font-size: 1.2rem;
+    }
+
+    .cart-item-price {
+        margin-left: 0;
+        margin-top: 0.8rem;
+        font-size: 1.25rem;
+    }
+
+    .remove-item-btn {
+        position: absolute;
+        right: 1.2rem;
+        top: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    .cart-total {
+        margin-top: 2.5rem;
+        font-size: 1.8rem;
+        padding-top: 1.8rem;
+    }
+
+    #checkout-button {
+        padding: 1.3rem;
+        font-size: 1.4rem;
+        margin-top: 3rem;
+    }
+
+    .site-footer .col-sm-4 {
+        align-items: center;
+        text-align: center;
+        margin-top: 2.5rem;
+    }
+    .site-footer .col-6.col-sm-5 {
+        order: -1;
+        margin-bottom: 2.5rem;
+    }
+    .site-footer h5 {
+        text-align: center;
+    }
+    .site-footer ul {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2.5rem;
+        padding: 0.8rem 0;
+    }
+    .image-gallery img {
+        max-height: 120px;
+        margin-bottom: 1rem;
+    }
+    .navbar-nav .nav-link {
+        text-align: center;
+        padding: 0.8rem 1.2rem;
+        margin: 0 8px;
+    }
+    .main-content-area {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+    .products-section, .cart-section {
+        padding: 2rem;
+        margin-bottom: 3.5rem;
+    }
+    .products-section h2, .cart-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    .product-item span {
+        font-size: 1.1rem;
+    }
+    .product-item button.add-to-cart-btn {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    #cart-items li {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    .cart-item-name, .cart-item-price {
+        font-size: 1.1rem;
+    }
+    .remove-item-btn {
+        font-size: 1.3rem;
+        right: 1rem;
+    }
+    .cart-total {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    #checkout-button {
+        font-size: 1.2rem;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+    footer {
+        padding: 2.5rem 0;
+        font-size: 0.9rem;
+    }
+    .site-footer h5 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+    .site-footer .col-sm-5 a {
+        font-size: 1.8rem;
+        margin: 0 0.8rem;
+    }
+    .site-footer .col-sm-4 a {
+        font-size: 1rem;
+        margin-top: 0.6rem;
+    }
+    .site-footer .col-sm-4 i {
+        font-size: 1.1rem;
+    }
+}
